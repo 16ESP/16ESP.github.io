@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhijit Mane | Portfolio</title>
+  <title>Abhijit Mane | C++ & Graphics Programmer</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,13 +14,13 @@
     :root {
       --bg-primary: #0a0f1d;
       --bg-secondary: #111827;
-      --bg-card: #1f2937;
+      --bg-card: #161f30;
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --accent: #38bdf8;
       --accent-hover: #0ea5e9;
-      --border: #374151;
-      --transition: all 0.3s ease;
+      --border: #2d3748;
+      --transition: all 0.25s ease;
     }
 
     * {
@@ -44,15 +44,16 @@
 
     .container {
       width: 90%;
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 0 1rem;
     }
 
+    /* Header */
     header {
       position: sticky;
       top: 0;
-      background: rgba(10, 15, 29, 0.85);
+      background: rgba(10, 15, 29, 0.9);
       backdrop-filter: blur(12px);
       z-index: 100;
       border-bottom: 1px solid var(--border);
@@ -69,6 +70,7 @@
       font-size: 1.3rem;
       font-weight: 700;
       color: var(--accent);
+      letter-spacing: 0.5px;
     }
 
     .nav-links {
@@ -83,7 +85,7 @@
     }
 
     section {
-      padding: 5rem 0;
+      padding: 4.5rem 0;
     }
 
     .section-title {
@@ -96,13 +98,14 @@
     .section-title::after {
       content: '';
       display: block;
-      width: 60px;
+      width: 50px;
       height: 3px;
       background: var(--accent);
       margin: 0.5rem auto 0;
       border-radius: 2px;
     }
 
+    /* Hero */
     .hero {
       min-height: calc(100vh - 70px);
       display: flex;
@@ -112,9 +115,9 @@
     }
 
     .hero-content h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .hero-content h1 span {
@@ -122,7 +125,7 @@
     }
 
     .hero-typed {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       color: var(--text-muted);
       margin-bottom: 1.5rem;
       min-height: 2rem;
@@ -154,6 +157,12 @@
       transform: translateY(-3px);
     }
 
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
     .btn {
       display: inline-block;
       padding: 0.75rem 1.8rem;
@@ -172,35 +181,85 @@
       background: var(--accent-hover);
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 1.2rem;
+    .btn-outline {
+      border: 1px solid var(--accent);
+      color: var(--accent);
     }
 
-    .skill-card {
+    .btn-outline:hover {
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    /* Skills */
+    .skill-category {
+      margin-bottom: 2rem;
+    }
+
+    .skill-category h3 {
+      font-size: 1.15rem;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .skills-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .badge {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 1.5rem 1rem;
-      border-radius: 8px;
-      text-align: center;
-      transition: var(--transition);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
     }
 
-    .skill-card i {
-      font-size: 2.2rem;
-      color: var(--accent);
+    /* Experience Card */
+    .experience-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
       margin-bottom: 0.5rem;
     }
 
-    .skill-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
+    .exp-company {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
     }
 
+    .exp-date {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .exp-role {
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+
+    .exp-bullets {
+      padding-left: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .exp-bullets li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Projects Grid */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
 
@@ -224,49 +283,43 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .project-title {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 600;
     }
 
     .project-desc {
       color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.2rem;
+      gap: 0.4rem;
+      margin-top: auto;
     }
 
     .tag {
-      font-size: 0.75rem;
-      background: rgba(56, 189, 248, 0.1);
+      font-size: 0.72rem;
+      background: rgba(56, 189, 248, 0.12);
       color: var(--accent);
-      padding: 0.2rem 0.6rem;
+      padding: 0.2rem 0.5rem;
       border-radius: 4px;
     }
 
-    .project-links {
-      display: flex;
-      gap: 1rem;
+    /* Education & Certifications */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
     }
 
-    .project-links a {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-
-    .project-links a:hover {
-      color: var(--accent);
-    }
-
+    /* Contact Form */
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
@@ -302,17 +355,15 @@
     }
 
     @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.2rem;
-      }
-      .nav-links {
-        display: none;
-      }
+      .hero-content h1 { font-size: 2.2rem; }
+      .nav-links { display: none; }
+      .split-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Navbar -->
   <header>
     <div class="container">
       <nav>
@@ -320,6 +371,7 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -327,12 +379,14 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
         <h1>Hi, I'm <span>Abhijit Mane</span></h1>
         <div class="hero-typed" id="typed-text"></div>
         
+        <!-- Social Profiles -->
         <div class="social-links">
           <a href="https://github.com/16ESP" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
             <i class="fa-brands fa-github"></i>
@@ -340,129 +394,189 @@
           <a href="https://gitlab.com/abhijitmane9321" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitLab">
             <i class="fa-brands fa-gitlab"></i>
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
+          <a href="https://linkedin.com/in/abhijit-mane" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a href="mailto:your-email@example.com" class="social-btn" title="Email">
+          <a href="mailto:abhimane1969@gmail.com" class="social-btn" title="Email">
             <i class="fa-solid fa-envelope"></i>
           </a>
         </div>
 
-        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <div class="btn-group">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="AbhiCpp.pdf" target="_blank" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <p style="max-width: 750px; margin: 0 auto; text-align: center; color: var(--text-muted);">
-        I am a software developer passionate about building clean, efficient, and reliable applications. I manage code across GitHub and GitLab, work with modern web workflows, and enjoy solving complex problems.
+      <p style="max-width: 850px; margin: 0 auto; text-align: center; color: var(--text-muted); font-size: 1.05rem;">
+        C++ Software Developer and Graphics Programmer with 1.5+ years of professional experience specializing in high-performance, mission-critical systems and real-time graphics[cite: 1]. Experienced in low-level memory management, STL, cache optimization, and developing graphics pipelines using OpenGL, GLSL, and DirectX[cite: 1].
       </p>
     </div>
   </section>
 
+  <!-- Skills Section -->
   <section id="skills">
     <div class="container">
       <h2 class="section-title">Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <i class="fa-brands fa-html5"></i>
-          <p>HTML5</p>
+      
+      <div class="skill-category">
+        <h3>Core Programming & Graphics</h3>
+        <div class="skills-badges">
+          <span class="badge">C++</span>
+          <span class="badge">C</span>
+          <span class="badge">Java</span>
+          <span class="badge">Data Structures</span>
+          <span class="badge">OOP</span>
+          <span class="badge">OpenGL 4.6</span>
+          <span class="badge">OpenGL ES 3.2</span>
+          <span class="badge">WebGL 2.0</span>
+          <span class="badge">DirectX 11</span>
         </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-css3-alt"></i>
-          <p>CSS3</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Shaders & Rendering</h3>
+        <div class="skills-badges">
+          <span class="badge">GLSL</span>
+          <span class="badge">HLSL</span>
+          <span class="badge">PBR (Physically Based Rendering)</span>
+          <span class="badge">Shadow Mapping</span>
+          <span class="badge">FBO (Framebuffer Objects)</span>
+          <span class="badge">Texture Mapping</span>
+          <span class="badge">Programmable Pipeline</span>
         </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-js"></i>
-          <p>JavaScript</p>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-git-alt"></i>
-          <p>Git</p>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-github"></i>
-          <p>GitHub</p>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-gitlab"></i>
-          <p>GitLab</p>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-python"></i>
-          <p>Python</p>
-        </div>
-        <div class="skill-card">
-          <i class="fa-brands fa-linux"></i>
-          <p>Linux</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Systems, GPU & Tools</h3>
+        <div class="skills-badges">
+          <span class="badge">Win32 SDK</span>
+          <span class="badge">COM</span>
+          <span class="badge">CUDA</span>
+          <span class="badge">OpenCL</span>
+          <span class="badge">X11 / Linux</span>
+          <span class="badge">Android SDK</span>
+          <span class="badge">Git / GitLab</span>
+          <span class="badge">Visual Studio</span>
+          <span class="badge">Vim</span>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Professional Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      
+      <div class="experience-card">
+        <div class="exp-header">
+          <span class="exp-company">LiteCode Software Pvt. Ltd.</span>
+          <span class="exp-date">Nov 2023 – Apr 2025 | Pune, India</span>
+        </div>
+        <div class="exp-role">Software Developer (C / C++)</div>
+        <ul class="exp-bullets">
+          <li>Developed and optimized mission-critical financial policy modules using C/C++[cite: 1].</li>
+          <li>Applied low-level memory management and data-cache optimization techniques to improve application runtime performance[cite: 1].</li>
+          <li>Analyzed existing codebases for execution efficiency, memory footprints, and debugging complex production modules[cite: 1].</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
+      <h2 class="section-title">Graphics & Software Projects</h2>
       <div class="projects-grid">
         
+        <!-- F1 Racing -->
         <div class="project-card">
           <div>
             <div class="project-header">
-              <h3 class="project-title">Project One</h3>
-              <div class="project-links">
-                <a href="https://github.com/16ESP" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
-                <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
+              <h3 class="project-title">F1 - Real-Time Racing Demo</h3>
+              <a href="https://github.com/16ESP" target="_blank"><i class="fa-brands fa-github"></i></a>
             </div>
-            <p class="project-desc">A web application built to solve real-time workflow problems. Fully modular and version-controlled.</p>
+            <p class="project-desc">Real-time F1 racing scene with PBR materials, shadow mapping, particle smoke, depth of field, motion blur, and Bezier camera[cite: 1].</p>
           </div>
-          <div>
-            <div class="project-tags">
-              <span class="tag">JavaScript</span>
-              <span class="tag">HTML/CSS</span>
-              <span class="tag">Git</span>
-            </div>
+          <div class="project-tags">
+            <span class="tag">C++</span><span class="tag">OpenGL 4.6</span><span class="tag">GLSL</span><span class="tag">Win32</span><span class="tag">Assimp</span>
           </div>
         </div>
 
+        <!-- GLInsight -->
         <div class="project-card">
           <div>
             <div class="project-header">
-              <h3 class="project-title">Project Two</h3>
-              <div class="project-links">
-                <a href="https://gitlab.com/abhijitmane9321" target="_blank" rel="noopener"><i class="fa-brands fa-gitlab"></i></a>
-                <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
+              <h3 class="project-title">GLInsight - Rendering Engine</h3>
+              <a href="https://github.com/16ESP" target="_blank"><i class="fa-brands fa-github"></i></a>
             </div>
-            <p class="project-desc">Repository hosted on GitLab showcasing CI/CD pipelines, backend integration, or automation scripts.</p>
+            <p class="project-desc">Modular real-time rendering engine featuring COM-based components, shader management, FBOs, terrain, water, and atmospheric scattering[cite: 1].</p>
           </div>
-          <div>
-            <div class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">GitLab CI</span>
-              <span class="tag">Linux</span>
-            </div>
+          <div class="project-tags">
+            <span class="tag">C++</span><span class="tag">OpenGL 4.6</span><span class="tag">COM</span><span class="tag">Win32 SDK</span><span class="tag">DLL</span>
           </div>
         </div>
 
+        <!-- HOPE Demo -->
         <div class="project-card">
           <div>
             <div class="project-header">
-              <h3 class="project-title">Project Three</h3>
-              <div class="project-links">
-                <a href="https://github.com/16ESP" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
-                <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
+              <h3 class="project-title">HOPE - Animated Demo</h3>
+              <a href="https://github.com/16ESP" target="_blank"><i class="fa-brands fa-github"></i></a>
             </div>
-            <p class="project-desc">A front-end or utility application deployed with automated continuous integration.</p>
+            <p class="project-desc">3D animated real-time rendering application demonstrating shadow mapping, particle systems, alpha blending, and video rendering[cite: 1].</p>
           </div>
+          <div class="project-tags">
+            <span class="tag">C++</span><span class="tag">OpenGL 4.6</span><span class="tag">GLSL</span><span class="tag">FBO</span>
+          </div>
+        </div>
+
+        <!-- Khalish WebGL -->
+        <div class="project-card">
           <div>
-            <div class="project-tags">
-              <span class="tag">Web API</span>
-              <span class="tag">Responsive</span>
+            <div class="project-header">
+              <h3 class="project-title">Khalish - WebGL Demo</h3>
+              <a href="https://github.com/16ESP" target="_blank"><i class="fa-brands fa-github"></i></a>
             </div>
+            <p class="project-desc">Interactive WebGL 2.0 application showcasing programmable shaders, particle effects, terrain rendering, lighting, and instancing[cite: 1].</p>
+          </div>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span><span class="tag">WebGL 2.0</span><span class="tag">GLSL</span>
+          </div>
+        </div>
+
+        <!-- Android OpenGL ES -->
+        <div class="project-card">
+          <div>
+            <div class="project-header">
+              <h3 class="project-title">Android OpenGL ES 3.2 App</h3>
+              <a href="https://github.com/16ESP" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <p class="project-desc">Android app featuring GPU texture sampling, render-to-texture, framebuffer-based pipelines, and interactive 3D graphics[cite: 1].</p>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Java</span><span class="tag">Android SDK</span><span class="tag">OpenGL ES 3.2</span>
+          </div>
+        </div>
+
+        <!-- Win32 Image Editor -->
+        <div class="project-card">
+          <div>
+            <div class="project-header">
+              <h3 class="project-title">Win32 GUI Image Editor</h3>
+              <a href="https://github.com/16ESP" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <p class="project-desc">Native desktop bitmap editor implementing COM Class Factory, Containment, and Aggregation for custom pixel manipulation filters[cite: 1].</p>
+          </div>
+          <div class="project-tags">
+            <span class="tag">C++</span><span class="tag">Win32 SDK</span><span class="tag">COM</span><span class="tag">GDI</span>
           </div>
         </div>
 
@@ -470,6 +584,29 @@
     </div>
   </section>
 
+  <!-- Education & Certifications -->
+  <section id="education">
+    <div class="container">
+      <div class="split-grid">
+        <div class="experience-card">
+          <h3 style="color: var(--accent); margin-bottom: 0.8rem;">Education</h3>
+          <p><strong>Dr. Babasaheb Ambedkar Technological University</strong>[cite: 1]</p>
+          <p style="color: var(--text-muted);">B.Tech in Computer Engineering (CGPA: 7.83)[cite: 1]</p>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">2019 – 2023 | Maharashtra, India[cite: 1]</p>
+        </div>
+
+        <div class="experience-card">
+          <h3 style="color: var(--accent); margin-bottom: 0.8rem;">Certifications</h3>
+          <p><strong>AMC Certified Developer - Real-Time Rendering (RTR6)</strong>[cite: 1]</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">AstroMediComp (Grade: 10.0/10.0)[cite: 1]</p>
+          <p style="margin-top: 0.6rem;"><strong>Data Structures Certification</strong>[cite: 1]</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Core2web Technologies[cite: 1]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Get In Touch</h2>
@@ -482,14 +619,15 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 Abhijit Mane. Hosted on GitHub Pages.</p>
+      <p>&copy; 2026 Abhijit Manohar Mane. Hosted on GitHub Pages.</p>
     </div>
   </footer>
 
   <script>
-    const phrases = ["Software Developer", "Git & Open Source Enthusiast", "Problem Solver"];
+    const phrases = ["C++ Developer", "Graphics Programmer", "Real-Time Rendering Specialist"];
     let i = 0, j = 0, currentPhrase = [], isDeleting = false;
     const typedText = document.getElementById("typed-text");
 
@@ -520,7 +658,7 @@
           }
         }
       }
-      const speed = isDeleting ? 40 : 90;
+      const speed = isDeleting ? 35 : 80;
       setTimeout(loop, speed);
     }
     loop();
